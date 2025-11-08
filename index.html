@@ -275,19 +275,27 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form">
+                <form class="contact-form" action="https://formspree.io/f/mgvrwvly" method="POST">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Your Name" data-i18n-placeholder="contact.formName" required>
+                        <input type="text" name="fullname" placeholder="LastName and Name" data-i18n-placeholder="contact.formFullName" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" name="email" placeholder="Your Email" data-i18n-placeholder="contact.formEmail" required>
+                        <input type="text" name="company" placeholder="Company" data-i18n-placeholder="contact.formCompany" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Phone Number" data-i18n-placeholder="contact.formPhone">
+                        <input type="email" name="_replyto" placeholder="Email" data-i18n-placeholder="contact.formEmail" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Tell us about your needs" data-i18n-placeholder="contact.formMessage" rows="5" required></textarea>
+                        <input type="tel" name="phone" placeholder="Phone Number" data-i18n-placeholder="contact.formPhone" required>
                     </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Message + Number of collaborators" data-i18n-placeholder="contact.formMessage" rows="5" required></textarea>
+                    </div>
+
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission - Social Pay Office">
+                    <input type="hidden" name="_next" value="#contact">
+
                     <button type="submit" class="btn btn-primary" data-i18n="contact.formButton">Send Message</button>
                 </form>
             </div>
@@ -317,7 +325,19 @@
         </div>
     </footer>
 
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon" id="modalIcon"></div>
+            <h3 class="modal-title" id="modalTitle"></h3>
+            <p class="modal-message" id="modalMessage"></p>
+            <button class="modal-close-btn" id="modalCloseBtn"></button>
+        </div>
+    </div>
+
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
+
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ldw6QUsAAAAAEfljJ61RFnDbohXuWpjIob3B5_o"></script>
+    <script src="js/recaptcha-v3.js"></script>
 </body>
 </html>

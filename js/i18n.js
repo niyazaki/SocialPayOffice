@@ -83,11 +83,22 @@ const translations = {
             locationText: "Brussels, Belgium",
             phoneTitle: "Phone",
             emailTitle: "Email",
-            formName: "Your Name",
-            formEmail: "Your Email",
+            formFullName: "LastName and Name",
+            formCompany: "Company",
+            formEmail: "Email",
             formPhone: "Phone Number",
-            formMessage: "Tell us about your needs",
+            formMessage: "Message + Number of collaborators",
             formButton: "Send Message"
+        },
+        modal: {
+            successTitle: "Message Sent!",
+            successMessage: "Thank you for contacting us! We will get back to you within 24 hours.",
+            errorTitle: "Oops!",
+            errorMessage: "There was a problem submitting your form. Please check your connection and try again.",
+            errorRetry: "Please try again or contact us directly.",
+            verifying: "Verifying...",
+            sending: "Sending...",
+            closeButton: "Close"
         },
         footer: {
             description: "Professional payroll services for Belgian businesses. Reliable, compliant, and personal.",
@@ -177,11 +188,22 @@ const translations = {
             locationText: "Bruxelles, Belgique",
             phoneTitle: "Téléphone",
             emailTitle: "E-mail",
-            formName: "Votre Nom",
-            formEmail: "Votre E-mail",
+            formFullName: "Nom et Prénom",
+            formCompany: "Entreprise",
+            formEmail: "E-mail",
             formPhone: "Numéro de Téléphone",
-            formMessage: "Parlez-nous de vos besoins",
+            formMessage: "Message + Nombre de collaborateurs",
             formButton: "Envoyer le Message"
+        },
+        modal: {
+            successTitle: "Message Envoyé !",
+            successMessage: "Merci de nous avoir contactés ! Nous vous répondrons dans les 24 heures.",
+            errorTitle: "Oups !",
+            errorMessage: "Un problème est survenu lors de l'envoi de votre formulaire. Veuillez vérifier votre connexion et réessayer.",
+            errorRetry: "Veuillez réessayer ou nous contacter directement.",
+            verifying: "Vérification...",
+            sending: "Envoi...",
+            closeButton: "Fermer"
         },
         footer: {
             description: "Services de paie professionnels pour les entreprises belges. Fiables, conformes et personnels.",
@@ -271,11 +293,22 @@ const translations = {
             locationText: "Brussel, België",
             phoneTitle: "Telefoon",
             emailTitle: "E-mail",
-            formName: "Uw Naam",
-            formEmail: "Uw E-mail",
+            formFullName: "Achternaam en Voornaam",
+            formCompany: "Bedrijf",
+            formEmail: "E-mail",
             formPhone: "Telefoonnummer",
-            formMessage: "Vertel ons over uw behoeften",
+            formMessage: "Bericht + Aantal medewerkers",
             formButton: "Verstuur Bericht"
+        },
+        modal: {
+            successTitle: "Bericht Verzonden!",
+            successMessage: "Bedankt voor uw bericht! We nemen binnen 24 uur contact met u op.",
+            errorTitle: "Oeps!",
+            errorMessage: "Er is een probleem opgetreden bij het verzenden van uw formulier. Controleer uw verbinding en probeer het opnieuw.",
+            errorRetry: "Probeer het opnieuw of neem rechtstreeks contact met ons op.",
+            verifying: "Verifiëren...",
+            sending: "Verzenden...",
+            closeButton: "Sluiten"
         },
         footer: {
             description: "Professionele loondiensten voor Belgische bedrijven. Betrouwbaar, conform en persoonlijk.",
@@ -335,8 +368,21 @@ function initLanguage() {
     });
 }
 
+// Get current language
+function getCurrentLanguage() {
+    return localStorage.getItem('preferredLanguage') || 'en';
+}
+
+// Get specific translation
+function getTranslation(key) {
+    const language = getCurrentLanguage();
+    return getNestedProperty(translations[language], key) || key;
+}
+
 // Export for use in main.js
 window.i18n = {
     translate: translatePage,
-    init: initLanguage
+    init: initLanguage,
+    getCurrentLanguage: getCurrentLanguage,
+    getTranslation: getTranslation
 };
