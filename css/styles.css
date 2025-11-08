@@ -55,6 +55,10 @@ body {
     box-shadow: var(--shadow-sm);
     z-index: 1000;
     transition: all 0.3s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .navbar.scrolled {
@@ -68,6 +72,10 @@ body {
 
 .navbar.scrolled .logo {
     font-size: 18px;
+}
+
+.navbar.scrolled .logo-image {
+    height: 45px;
 }
 
 .navbar.scrolled .logo-sub {
@@ -97,7 +105,7 @@ body {
 
 .logo {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 8px;
     font-weight: 900;
     font-size: 28px;
@@ -108,6 +116,12 @@ body {
 
 .logo:hover {
     opacity: 0.8;
+}
+
+.logo-image {
+    height: 65px;
+    width: auto;
+    transition: var(--transition);
 }
 
 .logo-text {
@@ -1003,11 +1017,17 @@ section {
 
 .footer-logo {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 8px;
     font-weight: 900;
     font-size: 24px;
     flex-shrink: 0;
+}
+
+.footer-logo-image {
+    height: 60px;
+    width: auto;
+    filter: brightness(0) invert(1);
 }
 
 .footer-logo .logo-text {
@@ -1155,6 +1175,10 @@ section {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+    }
+
+    .logo-image {
+        height: 50px;
     }
 
     .hero {
