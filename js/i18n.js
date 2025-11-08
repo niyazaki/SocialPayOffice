@@ -12,7 +12,7 @@ const translations = {
             slogan: "Social Pay Office, efficiency and trust at the heart of your human resources.",
             description: "Expert social secretariat services designed for Belgian businesses. We handle your payroll, compliance, and HR administration so you can focus on growing your business.",
             btnExplore: "Explore Services",
-            btnQuote: "Get a Quote"
+            btnQuote: "Contact Us"
         },
         services: {
             tag: "What We Offer",
@@ -114,7 +114,7 @@ const translations = {
             slogan: "Social Pay Office, l'efficacité et la confiance au cœur de vos ressources humaines.",
             description: "Services experts de secrétariat social conçus pour les entreprises belges. Nous gérons votre paie, votre conformité et votre administration RH afin que vous puissiez vous concentrer sur la croissance de votre entreprise.",
             btnExplore: "Découvrir nos Services",
-            btnQuote: "Demander un Devis"
+            btnQuote: "Contactez-nous"
         },
         services: {
             tag: "Ce Que Nous Offrons",
@@ -216,7 +216,7 @@ const translations = {
             slogan: "Social Pay Office, efficiëntie en vertrouwen in het hart van uw human resources.",
             description: "Deskundige sociaal secretariaat diensten ontworpen voor Belgische bedrijven. Wij behandelen uw loonbeheer, compliance en HR-administratie zodat u zich kunt concentreren op de groei van uw bedrijf.",
             btnExplore: "Ontdek Diensten",
-            btnQuote: "Vraag een Offerte"
+            btnQuote: "Contacteer Ons"
         },
         services: {
             tag: "Wat Wij Bieden",
