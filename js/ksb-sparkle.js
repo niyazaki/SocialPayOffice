@@ -4,13 +4,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     ksbLinks.forEach(link => {
         let canAnimate = true;
-        let hasLeft = false; // Track if mouse has left the element
+        let hasLeft = true; // Initialize to true to allow first hover animation
         const cooldownTime = 10; // 10 milliseconds cooldown
 
         // Get the parent paragraph element
         const parentParagraph = link.closest('p');
 
-        link.addEventListener('mouseenter', function(e) {
+        // Make the entire paragraph clickable and hoverable
+        if (parentParagraph) {
+            parentParagraph.style.cursor = 'pointer';
+
+            // Redirect on click
+            parentParagraph.addEventListener('click', function(e) {
+                window.open('https://ksbconsulting.be', '_blank', 'noopener');
+            });
+        }
+
+        const targetElement = parentParagraph || link;
+
+        targetElement.addEventListener('mouseenter', function(e) {
             // Only animate if user has left and cooldown has passed
             if (!canAnimate || !hasLeft) return;
 
@@ -61,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Track when mouse leaves the element
-        link.addEventListener('mouseleave', function(e) {
+        targetElement.addEventListener('mouseleave', function(e) {
             hasLeft = true;
         });
     });
