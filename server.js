@@ -148,7 +148,7 @@ app.post('/api/contact', contactLimiter, async (req, res) => {
                     <td style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); padding: 48px 40px; text-align: center; position: relative;">
                       <!-- Logo -->
                       <div style="margin-bottom: 24px;">
-                        <img src="https://spoffice.be/images/thumbnail_spoffice-logo.jpg" alt="Social Pay Office" style="width: 120px; height: auto; display: inline-block; filter: brightness(0) invert(1);" />
+                        <img src="https://spoffice.be/images/logo.svg" alt="Social Pay Office" style="width: 100px; height: auto; display: inline-block; filter: brightness(0) invert(1);" />
                       </div>
                       <h1 style="margin: 0; color: #ffffff; font-size: 32px; font-weight: 700; letter-spacing: -0.5px;">
                         Nouveau Contact
