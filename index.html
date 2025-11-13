@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Social Pay Office - Professional payroll and HR management services for Belgian businesses">
     <title>Social Pay Office - Professional Payroll Services</title>
+
+    <!-- Open Graph Meta Tags (Facebook, WhatsApp, LinkedIn, Telegram, iMessage) -->
+    <meta property="og:title" content="Social Pay Office - Professional Payroll Services">
+    <meta property="og:description" content="Social Pay Office - Professional payroll and HR management services for Belgian businesses">
+    <meta property="og:image" content="https://spoffice.be/images/thumbnail_spoffice-logo.jpg">
+    <meta property="og:image:secure_url" content="https://spoffice.be/images/thumbnail_spoffice-logo.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Social Pay Office Logo">
+    <meta property="og:url" content="https://spoffice.be">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Social Pay Office">
+    <meta property="og:locale" content="fr_BE">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Social Pay Office - Professional Payroll Services">
+    <meta name="twitter:description" content="Social Pay Office - Professional payroll and HR management services for Belgian businesses">
+    <meta name="twitter:image" content="https://spoffice.be/images/thumbnail_spoffice-logo.jpg">
+    <meta name="twitter:image:alt" content="Social Pay Office Logo">
+
+    <!-- Additional Meta Tags for Messaging Apps -->
+    <meta itemprop="name" content="Social Pay Office - Professional Payroll Services">
+    <meta itemprop="description" content="Social Pay Office - Professional payroll and HR management services for Belgian businesses">
+    <meta itemprop="image" content="https://spoffice.be/images/thumbnail_spoffice-logo.jpg">
+
     <link rel="icon" type="image/svg+xml" href="images/logo.svg">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -246,28 +273,42 @@
                         </div>
                     </div>
                 </div>
-                <form class="contact-form" action="https://formspree.io/f/mgvrwvly" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="fullname" placeholder="LastName and Name" data-i18n-placeholder="contact.formFullName" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="company" placeholder="Company" data-i18n-placeholder="contact.formCompany" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="_replyto" placeholder="Email" data-i18n-placeholder="contact.formEmail" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="Phone Number" data-i18n-placeholder="contact.formPhone" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Message + Number of collaborators" data-i18n-placeholder="contact.formMessage" rows="5" required></textarea>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="firstname" id="firstname" placeholder="Prénom" data-i18n-placeholder="contact.formFirstName" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastname" id="lastname" placeholder="Nom" data-i18n-placeholder="contact.formLastName" required>
+                        </div>
                     </div>
 
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="company" id="company" placeholder="Entreprise" data-i18n-placeholder="contact.formCompany" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="employees" id="employees" placeholder="Nombre d'employés" data-i18n-placeholder="contact.formEmployees" min="1" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" placeholder="Email" data-i18n-placeholder="contact.formEmail" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Veuillez entrer une adresse email valide" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" id="phone" placeholder="Téléphone" data-i18n-placeholder="contact.formPhone" pattern="[\d\s\+\(\)\-\.]{8,20}" title="Veuillez entrer un numéro de téléphone valide (8-20 caractères)" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="message" id="message" placeholder="Votre message" data-i18n-placeholder="contact.formMessage" rows="6" required></textarea>
+                    </div>
+
+                    <!-- Honeypot field for anti-spam (invisible to users) -->
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-                    <input type="hidden" name="_subject" value="New Contact Form Submission - Social Pay Office">
-                    <input type="hidden" name="_next" value="#contact">
 
-                    <button type="submit" class="btn btn-primary" data-i18n="contact.formButton">Send Message</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn" data-i18n="contact.formButton">Envoyer le message</button>
                 </form>
             </div>
         </div>
@@ -290,6 +331,7 @@
                 </nav>
                 <div class="footer-copyright">
                     <p>&copy; 2025 Social Pay Office. <span data-i18n="footer.rights">All rights reserved.</span></p>
+                    <p style="text-align: right; margin-top: 8px; font-size: 0.85em; opacity: 0.75;">made with 🩶 by <a href="https://ksbconsulting.be" target="_blank" rel="noopener" class="ksb-link">KSB Consulting</a></p>
                 </div>
             </div>
         </div>
@@ -306,8 +348,7 @@
 
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
-
-    <script src="https://www.google.com/recaptcha/api.js?render=6Ldw6QUsAAAAAEfljJ61RFnDbohXuWpjIob3B5_o"></script>
-    <script src="js/recaptcha-v3.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/ksb-sparkle.js"></script>
 </body>
 </html>

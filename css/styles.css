@@ -655,6 +655,45 @@ section {
     box-shadow: var(--shadow-sm);
 }
 
+.form-row {
+    display: grid;
+    gap: 20px;
+}
+
+/* Prénom - Nom : 50-50 */
+.form-row:nth-of-type(1) {
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Company - Nombre d'employés : 60-40 */
+.form-row:nth-of-type(2) {
+    grid-template-columns: 63fr 37fr;
+}
+
+/* Email - Phone : 60-40 */
+.form-row:nth-of-type(3) {
+    grid-template-columns: 55fr 45fr;
+}
+
+/* Responsive: passe à la ligne sur écrans moyens pour éviter débordement placeholder */
+@media (max-width: 992px) {
+    .form-row:nth-of-type(2),
+    .form-row:nth-of-type(3) {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Responsive mobile: tous les champs en pleine largeur */
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+.form-group {
+    position: relative;
+}
+
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -1291,4 +1330,26 @@ section {
     .logo-sub {
         font-size: 14px;
     }
+}
+
+/* ===== KSB CONSULTING SPARKLE EFFECT ===== */
+.ksb-link {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.ksb-link:hover {
+    opacity: 1 !important;
+}
+
+.ksb-particles-container {
+    overflow: visible !important;
+}
+
+.ksb-particle {
+    will-change: transform, opacity;
 }

@@ -80,11 +80,13 @@ const translations = {
             locationText: "Brussels, Belgium",
             phoneTitle: "Phone",
             emailTitle: "Email",
-            formFullName: "LastName and Name",
+            formFirstName: "First Name",
+            formLastName: "Last Name",
             formCompany: "Company",
+            formEmployees: "Number of Employees",
             formEmail: "Email",
             formPhone: "Phone Number",
-            formMessage: "Message + Number of collaborators",
+            formMessage: "Your Message",
             formButton: "Send Message"
         },
         modal: {
@@ -230,11 +232,13 @@ const translations = {
             locationText: "Bruxelles, Belgique",
             phoneTitle: "Téléphone",
             emailTitle: "E-mail",
-            formFullName: "Nom et Prénom",
+            formFirstName: "Prénom",
+            formLastName: "Nom",
             formCompany: "Entreprise",
+            formEmployees: "Nombre d'employés",
             formEmail: "E-mail",
-            formPhone: "Numéro de Téléphone",
-            formMessage: "Message + Nombre de collaborateurs",
+            formPhone: "Téléphone",
+            formMessage: "Votre message",
             formButton: "Envoyer le Message"
         },
         modal: {
@@ -380,11 +384,13 @@ const translations = {
             locationText: "Brussel, België",
             phoneTitle: "Telefoon",
             emailTitle: "E-mail",
-            formFullName: "Achternaam en Voornaam",
+            formFirstName: "Voornaam",
+            formLastName: "Achternaam",
             formCompany: "Bedrijf",
+            formEmployees: "Aantal medewerkers",
             formEmail: "E-mail",
             formPhone: "Telefoonnummer",
-            formMessage: "Bericht + Aantal medewerkers",
+            formMessage: "Uw bericht",
             formButton: "Verstuur Bericht"
         },
         modal: {
